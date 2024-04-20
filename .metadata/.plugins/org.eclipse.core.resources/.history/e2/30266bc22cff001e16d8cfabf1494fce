@@ -1,0 +1,15 @@
+package com.cibertec.prjdemo.repositories;
+
+
+
+import org.springframework.stereotype.Repository;
+
+import com.cibertec.prjdemo.entities.PersonaEntity;
+
+@Repository
+public interface IPersonaRepository extends IBaseRepository<PersonaEntity, Long> {
+	//busqueda a la persona por nombre y apellido mediante un (fragmento)
+	
+  List<PersonaEntity> findByNameContainingOrLastnamContaining (String nama, String lastname);
+
+}
